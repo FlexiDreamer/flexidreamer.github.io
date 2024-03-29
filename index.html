@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVZFKZEW0F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QVZFKZEW0F');
+  </script>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>FlexiDreamer</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <!-- model viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">FlexiDreamer: Single Image-to-3D Generation with FlexiCubes</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                  <span class="author-block">
+                    <text >Ruowen Zhao<sup>1,4</sup>, Zhengyi Wang<sup>2,4</sup>, Yikai Wang<sup>2</sup>, Zihan Zhou<sup>3</sup>,
+                        Jun Zhu<sup>2,4</sup> <br>
+                      <sup>1</sup>University of Chinese Academy of Sciences, <sup>2</sup>Tsinghua University,
+                      <sup>3</sup>Xidian University, <sup>4</sup>ShengShu
+                    </text>
+                  </span>
+            </div>
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/BiDiff/bidiff" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="http://arxiv.org/abs/2312.04963" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="far fa-file"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://youtu.be/3AHDbJlGKwY" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>Video</span>
+                    </a>
+                  </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img  src="static/images/teaser2.png" alt="Teaser"/>
+      <h2 class="subtitle has-text-centered">
+        <span></span> Shap-E is suffering from Fake Texture in (a),
+        Zero-123 is suffering from inconsistent multi-views in (b), and Prolific Dreamer is suffering from Multi-face Janus problem in (c).
+      </h2>
+      <h2 class="subtitle has-text-centered">
+      <span class="dnerf"></span>
+        We propose BiDiff, which has Consistent Views, Reasonable Geometry, and Authentic Textures.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+        <source src="./static/videos/bidiff_website_teaser1.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span></span> 
+        We propose BiDiff, which allows for simultaneous generation of multiple views and 3D results (40s), and rapid refinement of 3D results (20min).
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Generatived 3D Objects</h2>
+        </div>
+        <!-- <h2 class="subtitle has-text-centered">
+          <span></span> 
+          We propose BiDiff, which allows for simultaneous generation of multiple views and 3D results (40s), and rapid refinement of 3D results (20min).
+        </h2> -->
+        <div class="columns">
+          <!-- 第一列 -->
+          <div class="column">
+            <!-- <h2 class="subtitle has-text-centered">
+              <span></span> "A straw man"
+            </h2> -->
+            <p align="center" width="100%">
+              <video style="width: 100%;" poster="" id="eagle-video" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/strawman.mp4" type="video/mp4">
+              </video>
+            </p>
+          </div>
+          <!-- 第二列 -->
+          <div class="column">
+            <!-- <h2 class="subtitle has-text-centered">
+              <span></span> "A GUNDAM robot."
+            </h2> -->
+            <p align="center" width="100%">
+              <video style="width: 98.5%;" poster="" id="gundam-video" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/A GUNDAM robot.mp4" type="video/mp4">
+              </video>
+            </p>
+          </div>
+          <div class="column">
+            <!-- <h2 class="subtitle has-text-centered">
+              <span></span> "A GUNDAM robot."
+            </h2> -->
+            <p align="center" width="100%">
+              <video style="width: 98.5%;" poster="" id="gundam-video" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/A GUNDAM robot.mp4" type="video/mp4">
+              </video>
+            </p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <!-- <h2 class="subtitle has-text-centered">
+              <span></span> "A GUNDAM robot."
+            </h2> -->
+            <p align="center" width="100%">
+              <video style="width: 98.5%;" poster="" id="gundam-video" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/A GUNDAM robot.mp4" type="video/mp4">
+              </video>
+            </p>
+          </div>
+          <div class="column">
+            <!-- <h2 class="subtitle has-text-centered">
+              <span></span> "A Nike sport shoes."
+            </h2> -->
+            <p align="center" width="100%">
+              <video style="width: 100%;" poster="" id="shoes-video" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/A Nike sport shoes.mp4" type="video/mp4">
+              </video>
+            </p>
+          </div>
+          <div class="column">
+            <!-- <h2 class="subtitle has-text-centered">
+              <span></span> "A house in Van Gogh style."
+            </h2> -->
+            <p align="center" width="100%">
+              <video style="width: 98.5%;" poster="" id="house-video" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/A house in Van Gogh style.mp4" type="video/mp4">
+              </video>
+            </p>
+          </div>
+        </div>
+      
+        <p class="title is-3 mt-5 has-text-centered"> Textured Meshes </p>
+        <div class="level", style="width: 100%;">
+          <!-- <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/bear.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/bear.glb" download="bear-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div> -->
+          <!-- <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/fruit.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/fruit.glb" download="fruit-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div> -->
+          <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/dog.glb" poster="" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/dog.glb" download="dog-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/owl.glb" poster="" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/owl.glb" download="owl-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/mouse.glb" poster="" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/mouse.glb" download="mouse-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="level", style="width: 100%;">
+          <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/hamburger.glb" poster="" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/hamburger.glb" download="hamburger-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/clown.glb" poster="" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/clown.glb" download="clown-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/ci.glb" poster="" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/ci.glb" download="ci-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/golden.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/golden.glb" download="golden-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div> -->
+          <!-- <div class="level-item">
+            <div class="has-text-centered" style="width: 100%;">
+              <model-viewer src="static/meshes/elephant.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <a href="static/meshes/elephant.glb" download="elephant-model.glb" class="button is-link is-outlined is-rounded is-small">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>
+            </div>
+          </div> -->
+        </div>
+        
+      </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Abstract</h2>
+          <div class="item item-chair-tp">
+            <p align="center" width="100%">
+            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/bidiff_website_teaser1.mp4" type="video/mp4">
+            </video>
+          </p>
+        </div>
+        <p>
+          Most 3D generation research focuses on up-projecting 2D foundation models into the 3D space, either by minimizing 2D Score Distillation Sampling (SDS) loss or fine-tuning on multi-view datasets. Without explicit 3D priors, these methods often lead to geometric anomalies and multi-view inconsistency. Recently, researchers have attempted to improve the genuineness of 3D objects by directly training on 3D datasets, albeit at the cost of low-quality texture generation due to the limited texture diversity in 3D datasets. To harness the advantages of both approaches, we propose Bidirectional Diffusion (BiDiff), a unified framework that incorporates both a 3D and a 2D diffusion process, to preserve both 3D fidelity and 2D texture richness, respectively. Moreover, as a simple combination may yield inconsistent generation results, we further bridge them with novel bidirectional guidance. In addition, our method can be used as an initialization of optimization-based models to further improve the quality of 3D model and efficiency of optimization, reducing the process from 3.4 hours to 20 minutes. Experimental results have shown that our model achieves high-quality, diverse, and scalable 3D generation.
+        </p>
+      </div>
+  </div>
+</section> -->
+
+<!-- Paper abstract -->
+<section class="section hero ">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="text-align: center;">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        3D content generation from text prompts or single images has made remarkable progress in quality and speed recently. One of its dominant paradigms involves generating consistent multi-view images followed by a sparse-view reconstruction.
+         However, due to the challenge of directly deforming the mesh representation to approach the target topology, most methodologies learn an implicit representation (such as NeRF) during the sparse-view reconstruction and acquire the target 
+         mesh by a post-processing extraction. Although the implicit representation can effectively model rich 3D information, its training typically entails a long convergence time. In addition, the post-extraction operation from the implicit field
+          also leads to undesirable visual artifacts. In this paper, we propose FlexiDreamer, a novel single image-to-3d generation framework that reconstructs the target mesh in an end-to-end manner. By leveraging a flexible gradient-based extraction
+           known as FlexiCubes, our method circumvents the defects brought by the post-processing and facilitates a direct acquisition of the target mesh. Furthermore, we incorporate a multi-resolution hash grid encoding scheme that progressively 
+           activates the encoding levels into the implicit field in FlexiCubes to help capture geometric details for per-step optimization. Notably, FlexiDreamer recovers a dense 3D structure from a single-view image in approximately 1 minute on a 
+           single NVIDIA A100 GPU, outperforming previous methodologies by a large margin.
+      </p>
+    </div>
+    <!-- <iframe width="960" height="540" src="https://www.youtube.com/embed/3AHDbJlGKwY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+      
+    <!-- <h2 class="title is-3" style="text-align: center;">Methods: Bidirectional Diffusion</h2>
+    <img src="static/images/bidiff_website_framework.png" alt="MY ALT TEXT"/>
+    <p class="has-text-justified">The BiDiff framework operates as follows: (a) At each step of diffusion, we render the 3D diffusion's intermediate outputs into 2D images, which then guide the denoising of the 2D diffusion model. Simultaneously, the intermediate multi-view outputs from the 2D diffusion are re-projected to assist the denoising of the 3D diffusion model. Red arrows show the bidirectional guidance, which ensures that both diffusion processes evolve coherently. (b) We use the outcomes of the 2D-3D diffusion as a strong initialization for optimization methods, allowing for further refinement with fewer optimization steps.</p> -->
+    <!-- <p align="center" width="100%">
+      <video muted autoplay loop>
+        <source src="./static/videos/bidiff_website_teaser2.mp4" type="video/mp4">
+      </video>
+    </p>     -->
+
+    <!-- <h2 class="title is-3" style="text-align: center;">Decoupled Geometry and Texture Control</h2>
+    <img width="1450px" src="static/images/texture_geometry.png" alt="MY ALT TEXT"/> -->
+
+  </div>
+</section>
+
+<!-- <section class="section hero ">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">Decoupled geometry and texture control</h2>
+      </div>
+    </div>
+    <img width="1450px" src="static/images/texture_geometry.png" alt="MY ALT TEXT"/>
+  </div>
+</section>   -->
+
+<!-- End paper abstract -->
+
+<!-- <section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">Methods: Bidirectional Diffusion</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/bidiff_website_framework.png" alt="MY ALT TEXT"/>
+          <p>The BiDiff framework operates as follows: (a) At each step of diffusion, we render the 3D diffusion's intermediate outputs into 2D images, which then guide the denoising of the 2D diffusion model. Simultaneously, the intermediate multi-view outputs from the 2D diffusion are re-projected to assist the denoising of the 3D diffusion model. Red arrows show the bidirectional guidance, which ensures that both diffusion processes evolve coherently. (b) We use the outcomes of the 2D-3D diffusion as a strong initialization for optimization methods, allowing for further refinement with fewer optimization steps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="hero is-light is-small" >
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">More Results</h2>
+      </div>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <h2 class="subtitle has-text-centered">
+            <span></span> "An ancient Chinese tower."
+          </h2>
+          <p align="center" width="100%">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/case4.mp4"
+                    type="video/mp4">
+          </video>
+          </p>
+        </div>
+
+        <div class="item item-steve">
+          <h2 class="subtitle has-text-centered">
+            <span></span> "An ancient Gothic tower."
+          </h2>
+          <p align="center" width="100%">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/An ancient Gothic tower.mp4"
+                    type="video/mp4">
+          </video>
+          </p>
+        </div>
+
+        <!-- <div class="item item-steve">
+          <h2 class="subtitle has-text-centered">
+            <span></span> "A Nike sport shoes."
+          </h2>
+          <p align="center" width="100%">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/A Nike sport shoes.mp4"
+                    type="video/mp4">
+          </video>
+          </p>
+        </div> -->
+
+        <div class="item item-steve">
+          <h2 class="subtitle has-text-centered">
+            <span></span> "A strong muscular man."
+          </h2>
+          <p align="center" width="100%">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/case5.mp4"
+                    type="video/mp4">
+          </video>
+          </p>
+        </div>
+
+        <div class="item item-steve">
+          <h2 class="subtitle has-text-centered">
+            <span></span> "A blue and white porcelain teapot."
+          </h2>
+          <p align="center" width="100%">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/A blue and white porcelain teapot.mp4"
+                    type="video/mp4">
+          </video>
+          </p>
+        </div>
+
+        <div class="item item-steve">
+          <h2 class="subtitle has-text-centered">
+            <span></span> "A black and white cow."
+          </h2>
+          <p align="center" width="100%">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/A black and white cow.mp4"
+                    type="video/mp4">
+          </video>
+          </p>
+        </div>
+
+        <div class="item item-steve">
+          <h2 class="subtitle has-text-centered">
+            <span></span> "A black and white cow style elephant."
+          </h2>
+          <p align="center" width="100%">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/case6.mp4"
+                    type="video/mp4">
+          </video>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <p class="title is-3 mt-5 has-text-centered"> Mesh Animations </p>
+    <p class="content has-text-centered is-size-5">
+      The following results are animated by <a href="https://www.mixamo.com/"><font color="#00F">Mixamo</font></a>.
+    </p>
+    <div class="columns">
+      <!-- 第一列 -->
+      <div class="column">
+        <p align="center" width="100%">
+          <video style="width: 100%;" poster="" id="gundam-video1" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/animate/new1.mp4" type="video/mp4">
+          </video>
+        </p>
+      </div>
+      <div class="column">
+        <p align="center" width="100%">
+          <video style="height: 100%;" poster="" id="gundam-video2" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/animate/new2.mp4" type="video/mp4">
+          </video>
+        </p>
+      </div>
+      <div class="column">
+        <p align="center" width="100%">
+          <video style="width: 100%;" poster="" id="gundam-video3" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/animate/new3.mp4" type="video/mp4">
+          </video>
+        </p>
+      </div>
+      <div class="column">
+        <p align="center" width="100%">
+          <video style="width: 100%;" poster="" id="gundam-video4" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/animate/new4.mp4" type="video/mp4">
+          </video>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="columns is-centered has-text-centered">
+  <HR align=center style="border:3 double #000000" width="80%" SIZE=5>
+</div>
+
+
+<!-- <section class="hero is-light is-small" style="background-color: white;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">More Results</h2>
+      </div>
+      <div class="item item-chair-tp">
+        <p align="center" width="100%">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/bidiff_website_teaser1.mp4" type="video/mp4">
+          </video>
+        </p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Result -->
+<!-- <section class="section hero is-light"> -->
+<!-- <section class="hero section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-12">
+        <h2 class="title is-3">Compare with existing methods</h2>
+        <div class="content has-text-justified">
+          <p>
+            Comparison with other works. The text prompts are "a green dragon head" and "a cute lizard". We also use the stable diffusion to generate reference images for Zero-123.
+          </p>
+          <div style="text-align:center;">
+            <img src="static/images/bidiff_website_compare1.png" alt="MY ALT TEXT"/>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End paper abstract -->
+
+<!-- <section class="hero section">
+  <div class="container is-max-desktop has-text-centered">
+    <p class="title is-3 mt-5 has-text-centered"> Texture Meshes </p>
+    <div class="columns">
+      <div class="column">
+        <p align="center" width="100%">
+          <model-viewer src="static/meshes/bear.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </p>
+      </div>
+      <div class="column">
+        <p align="center" width="100%">
+          <model-viewer src="static/meshes/fruit.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </p>
+      </div>
+      <div class="column">
+        <p align="center" width="100%">
+          <model-viewer src="static/meshes/gundam.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </p>
+      </div>
+      <div class="column">
+        <p align="center" width="100%">
+          <model-viewer src="static/meshes/lionfish.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </p>
+      </div>
+      <div class="column">
+        <p align="center" width="100%">
+          <model-viewer src="static/meshes/orangutan.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </p>
+      </div>
+      <div class="column">
+        <p align="center" width="100%">
+          <model-viewer src="static/meshes/pig2.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </p>
+      </div>
+    </div>
+</section> -->
+
+<!-- <section class="hero is-light is-small" style="background-color: white;">
+  <div class="hero-body">
+
+      <div class="container">
+        <p class="title is-3 mt-5 has-text-centered"> Mesh Animations </p>
+        <p class="content has-text-centered is-size-5">
+          The following results are animated by <a href="https://www.mixamo.com/">Mixamo</a>.
+        </p>
+        <div class="columns">
+          <div class="column">
+            <p align="center" width="100%">
+              <video style="width: 100%;" poster="" id="gundam-video1" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/animate/old_gundam_kick.mov" type="video/mp4">
+              </video>
+            </p>
+          </div>
+          <div class="column">
+            <p align="center" width="100%">
+              <video style="height: 100%;" poster="" id="gundam-video2" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/animate/old_gundam_attack.mov" type="video/mp4">
+              </video>
+            </p>
+          </div>
+          <div class="column">
+            <p align="center" width="100%">
+              <video style="width: 91%;" poster="" id="gundam-video3" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/animate/old_gundam_punch.mov" type="video/mp4">
+              </video>
+            </p>
+          </div>
+          <div class="column">
+            <p align="center" width="100%">
+              <video style="width: 94%;" poster="" id="gundam-video4" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/animate/old_gundam_dance.mov" type="video/mp4">
+              </video>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+</section> -->
+
+
+<!-- citation -->
+<section class="hero is-light is-small" style="background-color: white;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="card mt-4">
+        <header class="card-header">
+          <p class="card-header-title"> Citation </p>
+        </header>
+        <div class="card-content is-size-5 has-text-left">
+<pre><code>@article{ding2023text,
+  title={Text-to-3D Generation with Bidirectional Diffusion using both 2D and 3D priors}, 
+  author={Ding, Lihe and Dong, Shaocong, and Huang, Zhanpeng, and Wang, Zibin and Zhang, Yiyuan and Gong, Kaixiong and Xu, Dan and Xue, Tianfan},
+  journal={arXiv preprint arXiv:2312.04963},
+  year={2023},
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer" style="background-color: white;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
