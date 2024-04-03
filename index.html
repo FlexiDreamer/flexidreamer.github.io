@@ -201,11 +201,11 @@
         <div class="columns">
           <div class="column">
             <h2 class="subtitle has-text-centered">
-              <span></span> doraemon
+              <span></span> robot
             </h2>
             <p align="center" width="100%">
-              <video style="width: 95%;" poster="" id="doraemon-video" autoplay muted loop playsinline height="100%">
-                <source src="./static/videos/doraemon.mp4" type="video/mp4">
+              <video style="width: 95%;" poster="" id="robot-video" autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/robot.mp4" type="video/mp4">
               </video>
             </p>
           </div>
@@ -233,26 +233,7 @@
       
         <p class="title is-3 mt-5 has-text-centered"> Interactable Meshes </p>
         <div class="level", style="width: 100%;">
-          <!-- <div class="level-item">
-            <div class="has-text-centered" style="width: 100%;">
-              <model-viewer src="static/meshes/bear.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-              <a href="static/meshes/bear.glb" download="bear-model.glb" class="button is-link is-outlined is-rounded is-small">
-                <span class="icon">
-                  <i class="fas fa-download"></i>
-                </span>
-              </a>
-            </div>
-          </div> -->
-          <!-- <div class="level-item">
-            <div class="has-text-centered" style="width: 100%;">
-              <model-viewer src="static/meshes/fruit.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-              <a href="static/meshes/fruit.glb" download="fruit-model.glb" class="button is-link is-outlined is-rounded is-small">
-                <span class="icon">
-                  <i class="fas fa-download"></i>
-                </span>
-              </a>
-            </div>
-          </div> -->
+          
           <div class="level-item">
             <div class="has-text-centered" style="width: 100%;">
               <model-viewer src="static/meshes/robot_dog.glb" poster="" style="width: 100%; height: 350px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
@@ -315,49 +296,13 @@
               </a>
             </div>
           </div>
-          <!-- <div class="level-item">
-            <div class="has-text-centered" style="width: 100%;">
-              <model-viewer src="static/meshes/golden.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-              <a href="static/meshes/golden.glb" download="golden-model.glb" class="button is-link is-outlined is-rounded is-small">
-                <span class="icon">
-                  <i class="fas fa-download"></i>
-                </span>
-              </a>
-            </div>
-          </div> -->
-          <!-- <div class="level-item">
-            <div class="has-text-centered" style="width: 100%;">
-              <model-viewer src="static/meshes/elephant.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-              <a href="static/meshes/elephant.glb" download="elephant-model.glb" class="button is-link is-outlined is-rounded is-small">
-                <span class="icon">
-                  <i class="fas fa-download"></i>
-                </span>
-              </a>
-            </div>
-          </div> -->
+         
         </div>
         
       </div>
   </div>
 </section>
 
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3">Abstract</h2>
-          <div class="item item-chair-tp">
-            <p align="center" width="100%">
-            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/bidiff_website_teaser1.mp4" type="video/mp4">
-            </video>
-          </p>
-        </div>
-        <p>
-          Most 3D generation research focuses on up-projecting 2D foundation models into the 3D space, either by minimizing 2D Score Distillation Sampling (SDS) loss or fine-tuning on multi-view datasets. Without explicit 3D priors, these methods often lead to geometric anomalies and multi-view inconsistency. Recently, researchers have attempted to improve the genuineness of 3D objects by directly training on 3D datasets, albeit at the cost of low-quality texture generation due to the limited texture diversity in 3D datasets. To harness the advantages of both approaches, we propose Bidirectional Diffusion (BiDiff), a unified framework that incorporates both a 3D and a 2D diffusion process, to preserve both 3D fidelity and 2D texture richness, respectively. Moreover, as a simple combination may yield inconsistent generation results, we further bridge them with novel bidirectional guidance. In addition, our method can be used as an initialization of optimization-based models to further improve the quality of 3D model and efficiency of optimization, reducing the process from 3.4 hours to 20 minutes. Experimental results have shown that our model achieves high-quality, diverse, and scalable 3D generation.
-        </p>
-      </div>
-  </div>
-</section> -->
 
 <!-- Paper abstract -->
 <section class="section hero ">
@@ -409,159 +354,7 @@
   </div>
 </section>
 
-<!-- <section class="section hero ">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3">Decoupled geometry and texture control</h2>
-      </div>
-    </div>
-    <img width="1450px" src="static/images/texture_geometry.png" alt="MY ALT TEXT"/>
-  </div>
-</section>   -->
 
-<!-- End paper abstract -->
-
-<!-- <section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3">Methods: Bidirectional Diffusion</h2>
-        <div class="content has-text-justified">
-          <img src="static/images/bidiff_website_framework.png" alt="MY ALT TEXT"/>
-          <p>The BiDiff framework operates as follows: (a) At each step of diffusion, we render the 3D diffusion's intermediate outputs into 2D images, which then guide the denoising of the 2D diffusion model. Simultaneously, the intermediate multi-view outputs from the 2D diffusion are re-projected to assist the denoising of the 3D diffusion model. Red arrows show the bidirectional guidance, which ensures that both diffusion processes evolve coherently. (b) We use the outcomes of the 2D-3D diffusion as a strong initialization for optimization methods, allowing for further refinement with fewer optimization steps.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- <section class="hero is-light is-small" >
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-3">More Results</h2>
-      </div>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <h2 class="subtitle has-text-centered">
-            <span></span> "An ancient Chinese tower."
-          </h2>
-          <p align="center" width="100%">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/case4.mp4"
-                    type="video/mp4">
-          </video>
-          </p>
-        </div>
-
-        <div class="item item-steve">
-          <h2 class="subtitle has-text-centered">
-            <span></span> "An ancient Gothic tower."
-          </h2>
-          <p align="center" width="100%">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/An ancient Gothic tower.mp4"
-                    type="video/mp4">
-          </video>
-          </p>
-        </div>
-
-        <div class="item item-steve">
-          <h2 class="subtitle has-text-centered">
-            <span></span> "A Nike sport shoes."
-          </h2>
-          <p align="center" width="100%">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/A Nike sport shoes.mp4"
-                    type="video/mp4">
-          </video>
-          </p>
-        </div> 
-
-        <div class="item item-steve">
-          <h2 class="subtitle has-text-centered">
-            <span></span> "A strong muscular man."
-          </h2>
-          <p align="center" width="100%">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/case5.mp4"
-                    type="video/mp4">
-          </video>
-          </p>
-        </div>
-
-        <div class="item item-steve">
-          <h2 class="subtitle has-text-centered">
-            <span></span> "A blue and white porcelain teapot."
-          </h2>
-          <p align="center" width="100%">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/A blue and white porcelain teapot.mp4"
-                    type="video/mp4">
-          </video>
-          </p>
-        </div>
-
-        <div class="item item-steve">
-          <h2 class="subtitle has-text-centered">
-            <span></span> "A black and white cow."
-          </h2>
-          <p align="center" width="100%">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/A black and white cow.mp4"
-                    type="video/mp4">
-          </video>
-          </p>
-        </div>
-
-        <div class="item item-steve">
-          <h2 class="subtitle has-text-centered">
-            <span></span> "A black and white cow style elephant."
-          </h2>
-          <p align="center" width="100%">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/case6.mp4"
-                    type="video/mp4">
-          </video>
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div> -->
-
-  <!-- <div class="container">
-    <p class="title is-3 mt-5 has-text-centered"> Mesh Animations </p>
-    <p class="content has-text-centered is-size-5">
-      The following results are animated by <a href="https://www.mixamo.com/"><font color="#00F">Mixamo</font></a>.
-    </p>
-    <div class="columns">
-      <div class="column">
-        <p align="center" width="100%">
-          <video style="width: 100%;" poster="" id="gundam-video1" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/animate/new1.mp4" type="video/mp4">
-          </video>
-        </p>
-      </div>
-      <div class="column">
-        <p align="center" width="100%">
-          <video style="height: 100%;" poster="" id="gundam-video2" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/animate/new2.mp4" type="video/mp4">
-          </video>
-        </p>
-      </div>
-      <div class="column">
-        <p align="center" width="100%">
-          <video style="width: 100%;" poster="" id="gundam-video3" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/animate/new3.mp4" type="video/mp4">
-          </video>
-        </p>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 <div class="columns is-centered has-text-centered">
@@ -569,120 +362,6 @@
 </div>
 
 
-<!-- <section class="hero is-light is-small" style="background-color: white;">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-3">More Results</h2>
-      </div>
-      <div class="item item-chair-tp">
-        <p align="center" width="100%">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/bidiff_website_teaser1.mp4" type="video/mp4">
-          </video>
-        </p>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-<!-- Result -->
-<!-- <section class="section hero is-light"> -->
-<!-- <section class="hero section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-12">
-        <h2 class="title is-3">Compare with existing methods</h2>
-        <div class="content has-text-justified">
-          <p>
-            Comparison with other works. The text prompts are "a green dragon head" and "a cute lizard". We also use the stable diffusion to generate reference images for Zero-123.
-          </p>
-          <div style="text-align:center;">
-            <img src="static/images/bidiff_website_compare1.png" alt="MY ALT TEXT"/>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End paper abstract -->
-
-<!-- <section class="hero section">
-  <div class="container is-max-desktop has-text-centered">
-    <p class="title is-3 mt-5 has-text-centered"> Texture Meshes </p>
-    <div class="columns">
-      <div class="column">
-        <p align="center" width="100%">
-          <model-viewer src="static/meshes/bear.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-        </p>
-      </div>
-      <div class="column">
-        <p align="center" width="100%">
-          <model-viewer src="static/meshes/fruit.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-        </p>
-      </div>
-      <div class="column">
-        <p align="center" width="100%">
-          <model-viewer src="static/meshes/gundam.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-        </p>
-      </div>
-      <div class="column">
-        <p align="center" width="100%">
-          <model-viewer src="static/meshes/lionfish.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-        </p>
-      </div>
-      <div class="column">
-        <p align="center" width="100%">
-          <model-viewer src="static/meshes/orangutan.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-        </p>
-      </div>
-      <div class="column">
-        <p align="center" width="100%">
-          <model-viewer src="static/meshes/pig2.glb" poster="" style="width: 100%;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-        </p>
-      </div>
-    </div>
-</section> -->
-
-<!-- <section class="hero is-light is-small" style="background-color: white;">
-  <div class="hero-body">
-
-      <div class="container">
-        <p class="title is-3 mt-5 has-text-centered"> Mesh Animations </p>
-        <p class="content has-text-centered is-size-5">
-          The following results are animated by <a href="https://www.mixamo.com/">Mixamo</a>.
-        </p>
-        <div class="columns">
-          <div class="column">
-            <p align="center" width="100%">
-              <video style="width: 100%;" poster="" id="gundam-video1" autoplay muted loop playsinline height="100%">
-                <source src="./static/videos/animate/old_gundam_kick.mov" type="video/mp4">
-              </video>
-            </p>
-          </div>
-          <div class="column">
-            <p align="center" width="100%">
-              <video style="height: 100%;" poster="" id="gundam-video2" autoplay muted loop playsinline height="100%">
-                <source src="./static/videos/animate/old_gundam_attack.mov" type="video/mp4">
-              </video>
-            </p>
-          </div>
-          <div class="column">
-            <p align="center" width="100%">
-              <video style="width: 91%;" poster="" id="gundam-video3" autoplay muted loop playsinline height="100%">
-                <source src="./static/videos/animate/old_gundam_punch.mov" type="video/mp4">
-              </video>
-            </p>
-          </div>
-          <div class="column">
-            <p align="center" width="100%">
-              <video style="width: 94%;" poster="" id="gundam-video4" autoplay muted loop playsinline height="100%">
-                <source src="./static/videos/animate/old_gundam_dance.mov" type="video/mp4">
-              </video>
-            </p>
-          </div>
-        </div>
-      </div>
-  </div>
-</section> -->
 
 
 <!-- citation -->
